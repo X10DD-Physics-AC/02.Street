@@ -12,7 +12,6 @@
             text-align: center;
             padding-top: 60px;
             overflow-y: auto;
-            position: relative;
         }
         .container {
             background-color: #fff;
@@ -33,26 +32,6 @@
             z-index: 1000;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
         }
-        nav .dropdown {
-            display: inline-block;
-            position: relative;
-        }
-        nav .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: #1a7f7f;
-            min-width: 160px;
-            z-index: 1000;
-        }
-        nav .dropdown:hover .dropdown-content {
-            display: block;
-        }
-        nav .dropdown-content a {
-            color: white;
-            padding: 10px 20px;
-            display: block;
-            text-decoration: none;
-        }
         nav a {
             margin: 0 15px;
             color: white;
@@ -61,21 +40,6 @@
         }
         nav a:hover {
             text-decoration: underline;
-        }
-        #smoke {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('https://imgur.com/6WlYZRa.gif') repeat;
-            background-size: 50% 50%;
-            opacity: 0.5;
-            z-index: -1;
-        }
-        header {
-            text-align: center;
-            margin-bottom: 20px;
         }
         .highlight {
             font-size: 1.2em;
@@ -87,6 +51,8 @@
             color: #FF4500;
             font-weight: bold;
             text-decoration: none;
+            margin-bottom: 20px;
+            display: inline-block;
         }
         .links {
             display: flex;
@@ -98,60 +64,37 @@
             width: 40px;
             height: 40px;
         }
-        .charts {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin: 20px 0;
+        .car-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+            margin-top: 20px;
         }
-        .charts img {
-            width: 80%;
-            max-width: 600px;
-            margin-bottom: 20px;
-            border-radius: 10px;
-        }
-        .settings-section {
-            text-align: center;
-            margin: 20px auto;
-        }
-        .settings-section img {
-            max-width: 90%;
-            margin-bottom: 20px;
-        }
-        .lut-download {
-            font-size: 2em;
-            color: #FFD700;
-            font-weight: bold;
+        .car-links a {
+            display: block;
             text-decoration: none;
-            display: inline-block;
-            margin: 20px 0;
+            color: #1a7f7f;
+            font-weight: bold;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+        .car-links a:hover {
+            background-color: #e3f2f9;
         }
     </style>
 </head>
 <body>
-    <div id="smoke"></div> <!-- Smoke animation background -->
     <nav>
-        <a href="#street">02. Street Pack</a>
-        <a href="#features">Features</a>
-        <a href="#force-feedback">Force Feedback Settings</a>
+        <a href="#overview">Street Pack Overview</a>
+        <a href="#demo">Demo Video</a>
+        <a href="#cars">Cars</a>
         <a href="#community">Community</a>
-        <div class="dropdown">
-            <span>More Packs</span>
-            <div class="dropdown-content">
-                <a href="https://x10dd-physics-ac.github.io/01.Grassroots/">Grassroots Pack</a>
-                <a href="https://linktr.ee/PodsMods">Linktree</a>
-                <a href="#">Muscle Pack (TBA)</a>
-                <a href="#">ProSpec Pack (TBA)</a>
-                <a href="#">Missile Pack (TBA)</a>
-                <a href="#">Fun Pack (TBA)</a>
-            </div>
-        </div>
     </nav>
 
     <div class="container">
         <header>
-            <img src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExMXN2cWR0amhvbmpiOXR6MnlxdHBlN2k1Ym1iOTFkdDk4czgzdmhkbyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/lnov5Fk30SIl8C4zM4/giphy-downsized-large.gif" alt="Header GIF" style="width: 100%; max-width: 800px; border-radius: 10px; margin-bottom: 20px;">
-            
             <div class="links">
                 <a href="https://www.patreon.com/user?u=80119694">
                     <img src="https://1000logos.net/wp-content/uploads/2021/05/Patreon-logo-2013.png" alt="Patreon">
@@ -161,53 +104,48 @@
                 </a>
             </div>
 
-            <h1>Street Drift and Touge</h1>
+            <h1>Street Drift and Touge Pack</h1>
             <p>
-                Welcome to the official release of the **Street Drift and Touge Pack**, featuring 3 finely-tuned engine maps and up to **60/53 steering angle** for a thrilling drift experience. Designed for intermediate to advanced sim drifters, this pack offers **next-level car control** with enhanced tire dynamics, superior power handling, and realistic turbo effects. This release was heavily influenced by Driftworks, Pro Drift Series, and Excite packs, refined for everyday street setups. Explore the evolution of street-level simulation physics and experience the grind, the smoke, and the street synergy that takes drifting to its heart.
+                Welcome to the latest evolution in drifting simulations! The **Street Drift and Touge Pack** takes everything you've loved from Assetto Corsa and cranks it up a notch.  
+                This pack features **30 meticulously tuned cars** designed for street drifting and touge runs. With **realistic tire options**, finely balanced **suspension dynamics**, and **three unique engine maps**, this pack delivers the most authentic street driving experience possible. Inspired by the finest car packs, this is your ultimate challenge to master!
             </p>
         </header>
 
-        <section id="street">
-            <h2>02. Street Pack</h2>
+        <section id="overview">
+            <h2>Pack Highlights</h2>
+            <p class="highlight">
+                - **30 Cars with Stunning Accuracy**  
+                - **Engine Tuning Options** (163HP to 396HP across 3 maps)  
+                - **60/53 Steering Angle** for the sharpest drifts  
+                - Realistic turbo and naturally aspirated (N/A) setups.  
+                Every car is a unique masterpiece to dominate the streets and touges.
+            </p>
             <a href="https://drive.google.com/file/d/1Aa6DMsLpjALwr14FfvZAs5EjBh5jeOXU/view?usp=drive_link" class="download-link">FULL STREET PACK DOWNLOAD</a>
         </section>
 
-        <div id="slideshow" class="slideshow">
-            <img id="slide-img" src="https://imgur.com/ZPSE59W.png" alt="Slideshow Image" style="width: 100%; max-width: 800px; border-radius: 10px;">
-        </div>
-
-        <section>
-            <h2>Preview Video</h2>
+        <section id="demo">
+            <h2>Demo Video</h2>
             <div style="text-align: center; margin-bottom: 20px;">
                 <iframe width="560" height="315" src="https://www.youtube.com/embed/7ofu0GbUghE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
         </section>
 
-        <footer>
-            <img src="https://imgur.com/WpqlEZO.png" alt="PodMods Footer" style="width: 100%; max-width: 800px; border-radius: 10px;">
-        </footer>
+        <section id="cars">
+            <h2>Included Cars</h2>
+            <div class="car-links">
+                <!-- Replace with car links -->
+                <a href="https://drive.google.com/file/d/17EsM7Z1-MjJ5XWVpMtU8oD2JeYm0X9MO/view?usp=drive_link">X10DD.Street-BMW M3 E36</a>
+                <a href="https://drive.google.com/file/d/14WH3ShJq6FvVOAyMNcDlgY8_ZSGFVPkY/view?usp=drive_link">X10DD.Street-BMW M3 E46</a>
+                <a href="https://drive.google.com/file/d/1o7WyJVYIDxZ-hGvve-MHgtSfKA-ppYiJ/view?usp=drive_link">X10DD.Street-Chevy Corvette C4</a>
+                <!-- Repeat links for all 30 cars -->
+            </div>
+        </section>
+
+        <section id="community">
+            <h2>Community and Resources</h2>
+            <a href="https://vosan.co/">Vosan - Street Pack</a><br>
+            <a href="https://miinq.com/">Miinq - Street Pack</a>
+        </section>
     </div>
-
-    <script>
-        const images = [
-            "https://imgur.com/ZPSE59W.png",
-            "https://imgur.com/fFdwiPR.png",
-            "https://imgur.com/tlhLTcw.png",
-            "https://imgur.com/F4cOdNF.png",
-            "https://imgur.com/xGDS7qo.png",
-            "https://imgur.com/vFobscu.png",
-            "https://imgur.com/ztFlGeJ.png"
-        ];
-
-        let currentIndex = 0;
-        const slideImg = document.getElementById("slide-img");
-
-        function changeImage() {
-            currentIndex = (currentIndex + 1) % images.length;
-            slideImg.src = images[currentIndex];
-        }
-
-        setInterval(changeImage, 5000); // Change image every 5 seconds
-    </script>
 </body>
 </html>
