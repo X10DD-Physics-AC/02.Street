@@ -3,171 +3,145 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Street Drift Car Pack</title>
+    <title>X10DD Street Pack</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
-            color: #333;
-            text-align: center;
-            padding-top: 60px;
-            overflow-y: auto;
+            background-color: #0f0f0f;
+            color: #ddd;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
         }
+
+        #smoke {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://imgur.com/6WlYZRa.gif') repeat;
+            background-size: 50% 50%;
+            opacity: 0.2;
+            z-index: -1;
+        }
+
         nav {
             position: fixed;
             top: 0;
-            width: 100%;
-            background-color: #1a7f7f;
+            left: 0;
+            width: 200px;
+            height: 100%;
+            background-color: #1a1a1a;
             color: white;
-            padding: 10px 0;
-            text-align: center;
-            z-index: 1000;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
             display: flex;
-            justify-content: space-around;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 20px;
         }
-        nav .dropdown {
-            position: relative;
-            display: inline-block;
-        }
-        nav .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: #fff;
-            color: #333;
-            min-width: 200px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-            z-index: 1001;
-            text-align: left;
-        }
-        nav .dropdown-content a {
+
+        nav a {
+            margin: 10px 0;
             color: #1a7f7f;
-            padding: 10px 15px;
             text-decoration: none;
-            display: block;
+            font-weight: bold;
         }
-        nav .dropdown-content a:hover {
-            background-color: #f0f0f0;
+
+        nav a:hover {
+            text-decoration: underline;
         }
-        nav .dropdown:hover .dropdown-content {
-            display: block;
+
+        .content {
+            margin-left: 220px;
+            padding: 20px;
         }
+
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
         .highlight {
             font-size: 1.2em;
             color: #1a7f7f;
             font-weight: bold;
         }
-        .download-link {
-            font-size: 1.5em;
-            color: #FF4500;
-            font-weight: bold;
-            text-decoration: none;
-            margin-bottom: 20px;
-            display: inline-block;
-        }
-        .slideshow {
-            margin: 20px auto;
-            position: relative;
-            width: 80%;
-            max-width: 800px;
-        }
-        .slideshow img {
-            width: 100%;
-            border-radius: 10px;
-        }
+
         .car-links {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
             gap: 10px;
-            margin-top: 20px;
         }
+
         .car-links a {
-            text-decoration: none;
+            background-color: #333;
             color: #1a7f7f;
-            font-weight: bold;
-            padding: 10px;
-            background-color: #f9f9f9;
+            padding: 10px 15px;
             border-radius: 5px;
-            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            text-decoration: none;
+            display: inline-block;
+            margin: 5px;
         }
+
         .car-links a:hover {
-            background-color: #e3f2f9;
+            background-color: #1a7f7f;
+            color: white;
         }
-        .settings-section img {
-            max-width: 90%;
-            margin-bottom: 20px;
+
+        .charts img {
+            width: 80%;
+            max-width: 600px;
+            margin: 10px auto;
+            border-radius: 10px;
+            display: block;
         }
+
+        iframe {
+            margin: 20px auto;
+            display: block;
+        }
+
         .lut-download {
-            font-size: 1.5em;
+            font-size: 2em;
             color: #FFD700;
             font-weight: bold;
             text-decoration: none;
         }
+
+        footer {
+            margin-top: 20px;
+            text-align: center;
+            color: #777;
+        }
     </style>
 </head>
 <body>
+    <div id="smoke"></div>
+
+    <!-- Sidebar Navigation -->
     <nav>
         <a href="#overview">Overview</a>
-        <div class="dropdown">
-            <a href="#">Cars</a>
-            <div class="dropdown-content">
-                <a href="https://drive.google.com/file/d/1Aa6DMsLpjALwr14FfvZAs5EjBh5jeOXU/view?usp=drive_link" target="_blank">Full Pack</a>
-                <a href="https://vosan.co/driftcarpacks/x10ddstreet-grassroots-to-pro-series/" target="_blank">Vosan Link</a>
-                <a href="https://miinq.app/app/explore?id=364&mod=X10DD.Street+%5BGrassroots+to+Pro+Series%5D" target="_blank">Miinq Link</a>
-                <a href="#cars">Single Car Links</a>
-            </div>
-        </div>
-        <div class="dropdown">
-            <a href="#">Force Feedback</a>
-            <div class="dropdown-content">
-                <a href="#sim-magic">Sim Magic</a>
-                <a href="#moza-racing">Moza Racing</a>
-                <a href="#logitech">Logitech</a>
-            </div>
-        </div>
+        <a href="#cars">Cars</a>
+        <a href="#features">Features</a>
+        <a href="#force-feedback">Force Feedback</a>
         <a href="#community">Community</a>
     </nav>
 
-    <div class="container">
+    <div class="content">
+        <!-- Header Section -->
         <header>
-            <h1>Street Drift and Touge Pack</h1>
-            <p>
-                Welcome to the **Street Drift and Touge Pack**, the next step in the X10DD series. This pack brings **30 unique cars** with ultra-precise physics, advanced tire dynamics, and three distinct engine maps for every driving style.
-            </p>
+            <h1>X10DD Street Pack</h1>
+            <p>The X10DD Street Pack brings 30 finely-tuned cars with authentic physics and dynamic handling for your drifting pleasure. Whether you're on a touge or in a cityscape, these cars are designed to provide realistic challenges and elevate your drifting experience. Influenced by top-tier car packs and crafted with care, this pack is a game-changer for drift enthusiasts.</p>
         </header>
 
-        <div id="slideshow" class="slideshow">
-            <img id="slide-img" src="https://imgur.com/ZPSE59W.png" alt="Slideshow Image">
-        </div>
-
-        <section id="overview">
-            <h2>Pack Highlights</h2>
-            <p class="highlight">
-                - **30 Cars meticulously tuned for Street and Touge**  
-                - **Engine Maps** (163HP to 396HP) with N/A and Turbo setups.  
-                - Unmatched handling, suspension dynamics, and tire wear realism.
-            </p>
-            <a href="https://drive.google.com/file/d/1Aa6DMsLpjALwr14FfvZAs5EjBh5jeOXU/view?usp=drive_link" class="download-link">FULL STREET PACK DOWNLOAD</a>
+        <!-- Demo Video -->
+        <section id="demo-video">
+            <h2>Demo Video</h2>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/7ofu0GbUghE" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
         </section>
 
-        <section id="force-feedback">
-            <h2>Force Feedback Settings</h2>
-            <div id="sim-magic">
-                <h3>Sim Magic</h3>
-                <img src="https://imgur.com/vQzMcYS.png" alt="Sim Magic Settings">
-            </div>
-            <div id="moza-racing">
-                <h3>Moza Racing</h3>
-                <img src="https://imgur.com/7otmb1F.png" alt="Moza Racing Settings">
-            </div>
-            <div id="logitech">
-                <h3>Logitech</h3>
-                <a href="https://cdn.discordapp.com/attachments/1249977904377364550/1249977905447047270/PodsModsG923.lut?ex=670820e4&is=6706cf64&hm=1873bd5e63ac3b9d4e2c6085c17a2cd974c47592cce18557faa23ab80cde862e&" class="lut-download">Download Logitech G920+ .LUT</a>
-                <img src="https://imgur.com/px4EGoq.png" alt="Logitech Settings 1">
-                <img src="https://imgur.com/TWKIeAp.png" alt="Logitech Settings 2">
-            </div>
-        </section>
-
+        <!-- Included Cars Section -->
         <section id="cars">
             <h2>Included Cars</h2>
             <div class="car-links">
@@ -177,31 +151,48 @@
                 <a href="https://drive.google.com/file/d/1jSCXkXtOzzYT9tKZPyo1dohsDl2q1X8U/view?usp=drive_link">Chevy Corvette C5</a>
                 <a href="https://drive.google.com/file/d/1Ox-Hta1sFpXeHgBXQp_y8BphI-MI8tIl/view?usp=drive_link">Chevrolet Corvette C6</a>
                 <a href="https://drive.google.com/file/d/1WGjMH1uqKhBRwsW12Ij-MLXLVRaGYts0/view?usp=drive_link">Dodge Challenger Demon</a>
-                <!-- (All remaining car links included) -->
+                <a href="https://drive.google.com/file/d/1MBCwiwG36BmYtGxksWbMwZ0K0lYj1n8q/view?usp=drive_link">Ford Foxbody Mustang</a>
+                <a href="https://drive.google.com/file/d/1fBemQpf4ygVuTtfGRMjQkO0tC7ZpNSmj/view?usp=drive_link">Ford Mustang S197</a>
+                <a href="https://drive.google.com/file/d/1wdmZUxfq2pCVn-L_JugSXju6P3RtwdnO/view?usp=drive_link">Ford Mustang RTR</a>
+                <a href="https://drive.google.com/file/d/1eek2FEzNcMXWVUP5bEdpFrN8LI8fhs4l/view?usp=drive_link">Ford Mustang SN95</a>
+                <a href="https://drive.google.com/file/d/1XipFHo5MLKaOqX2GXSqNNFB6WHLeZXaq/view?usp=drive_link">Lexus IS300</a>
+                <a href="https://drive.google.com/file/d/1q_ZUSnqIFmyud7tVW4sLLsbUryxyD-GX/view?usp=drive_link">Mazda Miata NA8C</a>
+                <a href="https://drive.google.com/file/d/1DkYTGF8hOaYpLRbuuNPaBUoG4KzP9Fps/view?usp=drive_link">Mazda RX-7 FC3S</a>
+                <a href="https://drive.google.com/file/d/1cv7XfQIU0Uzc1m-BekhcMmp7qcopckxt/view?usp=drive_link">Mazda RX-7 FD</a>
+                <a href="https://drive.google.com/file/d/1Ve41m6KutPlmBpsqUcUPiuTAV-xGWXYu/view?usp=drive_link">Subaru WRX STI</a>
+                <a href="https://drive.google.com/file/d/1dpBtaV1fbl34LI5_zxuLpCf20CuIAhct/view?usp=drive_link">Nissan S15</a>
+                <a href="https://drive.google.com/file/d/1J5Bt5tCGslGfO2oEPicVTgorUbZDU5bB/view?usp=drive_link">Nissan 180SX</a>
+                <a href="https://drive.google.com/file/d/1oOEpUdXyS8WkiMqkQNO7_QYiXvtWhEUP/view?usp=drive_link">Nissan 240SX</a>
+                <a href="https://drive.google.com/file/d/1qzaP-Rj0whCvOkzwZ_VEhzwwfESpKSAn/view?usp=drive_link">Nissan 350Z</a>
+                <a href="https://drive.google.com/file/d/1UO-2UWre8kvfCxXlQP9-d2HRQpTc0jt2/view?usp=drive_link">Nissan Laurel C35</a>
+                <a href="https://drive.google.com/file/d/1KteLBKDivSvSZKCwWs2QGRHNWeJlIfdn/view?usp=drive_link">Toyota Supra JZA70</a>
+                <a href="https://drive.google.com/file/d/1AHNjLdX2gvCj5VgC3gIG9xVIFPlxabnZ/view?usp=drive_link">Toyota AE86</a>
+                <a href="https://drive.google.com/file/d/15b8lotGhMHmWZ_xirl2JPS7PcQxF8smx/view?usp=drive_link">Nissan S14</a>
             </div>
         </section>
+
+        <!-- Force Feedback Section -->
+        <section id="force-feedback">
+            <h2>Force Feedback Settings</h2>
+            <p>Below are the specific force feedback settings required for optimal use with various wheels:</p>
+            <div class="charts">
+                <h4>Sim Magic</h4>
+                <img src="https://imgur.com/vQzMcYS.png" alt="Sim Magic Settings">
+                <h4>Moza Racing</h4>
+                <img src="https://imgur.com/7otmb1F.png" alt="Moza Racing Settings">
+                <h4>Logitech</h4>
+                <a href="https://cdn.discordapp.com/attachments/1249977904377364550/1249977905447047270/PodsModsG923.lut" class="lut-download">Download Logitech G920+ LUT</a>
+                <img src="https://imgur.com/px4EGoq.png" alt="Logitech Settings 1">
+                <img src="https://imgur.com/TWKIeAp.png" alt="Logitech Settings 2">
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <p>&copy; 2024 Pod's Mods. All rights reserved.</p>
+            <a href="https://vosan.co/driftcarpacks/x10ddstreet-grassroots-to-pro-series/">View on Vosan</a> |
+            <a href="https://miinq.app/app/explore?id=364&mod=X10DD.Street+%5BGrassroots+to+Pro+Series%5D">View on Miinq</a>
+        </footer>
     </div>
-
-    <script>
-        const images = [
-            "https://imgur.com/ZPSE59W.png",
-            "https://imgur.com/fFdwiPR.png",
-            "https://imgur.com/tlhLTcw.png",
-            "https://imgur.com/F4cOdNF.png",
-            "https://imgur.com/xGDS7qo.png",
-            "https://imgur.com/vFobscu.png",
-            "https://imgur.com/ztFlGeJ.png"
-        ];
-
-        let currentIndex = 0;
-        const slideImg = document.getElementById("slide-img");
-
-        function changeImage() {
-            currentIndex = (currentIndex + 1) % images.length;
-            slideImg.src = images[currentIndex];
-        }
-
-        setInterval(changeImage, 5000); // Change image every 5 seconds
-    </script>
 </body>
 </html>
