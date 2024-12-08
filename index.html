@@ -7,192 +7,191 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #0f0f0f;
-            color: #ddd;
+            background-color: #1a1a1a;
+            color: #f0f0f0;
             margin: 0;
             padding: 0;
             overflow-x: hidden;
         }
-
-        #smoke {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('https://imgur.com/6WlYZRa.gif') repeat;
-            background-size: 50% 50%;
-            opacity: 0.2;
-            z-index: -1;
-        }
-
         nav {
             position: fixed;
             top: 0;
             left: 0;
-            width: 200px;
-            height: 100%;
-            background-color: #1a1a1a;
-            color: white;
+            width: 100%;
+            background-color: #333;
+            padding: 10px 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+        nav ul {
             display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding-top: 20px;
+            justify-content: center;
+            list-style: none;
+            padding: 0;
+            margin: 0;
         }
-
-        nav a {
-            margin: 10px 0;
-            color: #1a7f7f;
+        nav ul li {
+            position: relative;
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: #f0f0f0;
             text-decoration: none;
-            font-weight: bold;
+            font-size: 1.1em;
+            padding: 8px 15px;
+            transition: background-color 0.3s;
         }
-
-        nav a:hover {
-            text-decoration: underline;
+        nav ul li a:hover {
+            background-color: #444;
+            border-radius: 5px;
         }
-
-        .content {
-            margin-left: 220px;
-            padding: 20px;
+        nav ul li ul {
+            display: none;
+            position: absolute;
+            top: 40px;
+            background-color: #444;
+            border-radius: 5px;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            z-index: 999;
         }
-
+        nav ul li:hover ul {
+            display: block;
+        }
+        nav ul li ul li {
+            margin: 0;
+        }
+        nav ul li ul li a {
+            display: block;
+            padding: 10px 15px;
+        }
+        nav ul li ul li a:hover {
+            background-color: #555;
+        }
         header {
             text-align: center;
-            margin-bottom: 20px;
+            padding: 50px 20px;
+            background: linear-gradient(120deg, #1a7f7f, #1a4a7f);
         }
-
-        .highlight {
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        header p {
             font-size: 1.2em;
-            color: #1a7f7f;
-            font-weight: bold;
         }
-
-        .car-links {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 10px;
+        section {
+            padding: 40px 20px;
         }
-
+        h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            text-align: center;
+        }
         .car-links a {
-            background-color: #333;
-            color: #1a7f7f;
+            display: inline-block;
+            background-color: #1a7f7f;
+            color: #f0f0f0;
+            text-decoration: none;
+            margin: 10px;
             padding: 10px 15px;
             border-radius: 5px;
-            text-decoration: none;
-            display: inline-block;
-            margin: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s;
         }
-
         .car-links a:hover {
-            background-color: #1a7f7f;
-            color: white;
+            background-color: #1a4a7f;
         }
-
-        .charts img {
-            width: 80%;
-            max-width: 600px;
-            margin: 10px auto;
-            border-radius: 10px;
-            display: block;
-        }
-
-        iframe {
-            margin: 20px auto;
-            display: block;
-        }
-
         .lut-download {
-            font-size: 2em;
+            font-size: 1.2em;
             color: #FFD700;
             font-weight: bold;
             text-decoration: none;
         }
-
-        footer {
-            margin-top: 20px;
-            text-align: center;
-            color: #777;
-        }
     </style>
 </head>
 <body>
-    <div id="smoke"></div>
 
-    <!-- Sidebar Navigation -->
+    <!-- Navigation -->
     <nav>
-        <a href="#overview">Overview</a>
-        <a href="#cars">Cars</a>
-        <a href="#features">Features</a>
-        <a href="#force-feedback">Force Feedback</a>
-        <a href="#community">Community</a>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li>
+                <a href="#">Cars</a>
+                <ul>
+                    <li><a href="https://drive.google.com/file/d/1Aa6DMsLpjALwr14FfvZAs5EjBh5jeOXU/view?usp=drive_link">Full Pack</a></li>
+                    <li><a href="https://vosan.co/driftcarpacks/x10ddstreet-grassroots-to-pro-series/">Vosan Link</a></li>
+                    <li><a href="https://miinq.app/app/explore?id=364&mod=X10DD.Street+%5BGrassroots+to+Pro+Series%5D">Miinq Link</a></li>
+                    <li><a href="#included-cars">Single Car Links</a></li>
+                </ul>
+            </li>
+            <li><a href="#force-feedback">Force Feedback</a></li>
+        </ul>
     </nav>
 
-    <div class="content">
-        <!-- Header Section -->
-        <header>
-            <h1>X10DD Street Pack</h1>
-            <p>The X10DD Street Pack brings 30 finely-tuned cars with authentic physics and dynamic handling for your drifting pleasure. Whether you're on a touge or in a cityscape, these cars are designed to provide realistic challenges and elevate your drifting experience. Influenced by top-tier car packs and crafted with care, this pack is a game-changer for drift enthusiasts.</p>
-        </header>
+    <!-- Header -->
+    <header>
+        <h1>X10DD Street Drift Pack</h1>
+        <p>
+            Elevate your sim drifting experience with the X10DD Street Drift Pack! Featuring 30 meticulously crafted cars, this pack combines precision tuning with dynamic physics for a realistic and challenging drift experience. Inspired by the best in the community, this pack offers options ranging from N/A to turbocharged beasts. Dive in and take your drifting to the next level.
+        </p>
+    </header>
 
-        <!-- Demo Video -->
-        <section id="demo-video">
-            <h2>Demo Video</h2>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/7ofu0GbUghE" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-        </section>
+    <!-- Video Section -->
+    <section>
+        <h2>Demo Video</h2>
+        <div style="text-align: center;">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/7ofu0GbUghE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </section>
 
-        <!-- Included Cars Section -->
-        <section id="cars">
-            <h2>Included Cars</h2>
-            <div class="car-links">
-                <a href="https://drive.google.com/file/d/17EsM7Z1-MjJ5XWVpMtU8oD2JeYm0X9MO/view?usp=drive_link">BMW M3 E36</a>
-                <a href="https://drive.google.com/file/d/14WH3ShJq6FvVOAyMNcDlgY8_ZSGFVPkY/view?usp=drive_link">BMW M3 E46</a>
-                <a href="https://drive.google.com/file/d/1o7WyJVYIDxZ-hGvve-MHgtSfKA-ppYiJ/view?usp=drive_link">Chevy Corvette C4</a>
-                <a href="https://drive.google.com/file/d/1jSCXkXtOzzYT9tKZPyo1dohsDl2q1X8U/view?usp=drive_link">Chevy Corvette C5</a>
-                <a href="https://drive.google.com/file/d/1Ox-Hta1sFpXeHgBXQp_y8BphI-MI8tIl/view?usp=drive_link">Chevrolet Corvette C6</a>
-                <a href="https://drive.google.com/file/d/1WGjMH1uqKhBRwsW12Ij-MLXLVRaGYts0/view?usp=drive_link">Dodge Challenger Demon</a>
-                <a href="https://drive.google.com/file/d/1MBCwiwG36BmYtGxksWbMwZ0K0lYj1n8q/view?usp=drive_link">Ford Foxbody Mustang</a>
-                <a href="https://drive.google.com/file/d/1fBemQpf4ygVuTtfGRMjQkO0tC7ZpNSmj/view?usp=drive_link">Ford Mustang S197</a>
-                <a href="https://drive.google.com/file/d/1wdmZUxfq2pCVn-L_JugSXju6P3RtwdnO/view?usp=drive_link">Ford Mustang RTR</a>
-                <a href="https://drive.google.com/file/d/1eek2FEzNcMXWVUP5bEdpFrN8LI8fhs4l/view?usp=drive_link">Ford Mustang SN95</a>
-                <a href="https://drive.google.com/file/d/1XipFHo5MLKaOqX2GXSqNNFB6WHLeZXaq/view?usp=drive_link">Lexus IS300</a>
-                <a href="https://drive.google.com/file/d/1q_ZUSnqIFmyud7tVW4sLLsbUryxyD-GX/view?usp=drive_link">Mazda Miata NA8C</a>
-                <a href="https://drive.google.com/file/d/1DkYTGF8hOaYpLRbuuNPaBUoG4KzP9Fps/view?usp=drive_link">Mazda RX-7 FC3S</a>
-                <a href="https://drive.google.com/file/d/1cv7XfQIU0Uzc1m-BekhcMmp7qcopckxt/view?usp=drive_link">Mazda RX-7 FD</a>
-                <a href="https://drive.google.com/file/d/1Ve41m6KutPlmBpsqUcUPiuTAV-xGWXYu/view?usp=drive_link">Subaru WRX STI</a>
-                <a href="https://drive.google.com/file/d/1dpBtaV1fbl34LI5_zxuLpCf20CuIAhct/view?usp=drive_link">Nissan S15</a>
-                <a href="https://drive.google.com/file/d/1J5Bt5tCGslGfO2oEPicVTgorUbZDU5bB/view?usp=drive_link">Nissan 180SX</a>
-                <a href="https://drive.google.com/file/d/1oOEpUdXyS8WkiMqkQNO7_QYiXvtWhEUP/view?usp=drive_link">Nissan 240SX</a>
-                <a href="https://drive.google.com/file/d/1qzaP-Rj0whCvOkzwZ_VEhzwwfESpKSAn/view?usp=drive_link">Nissan 350Z</a>
-                <a href="https://drive.google.com/file/d/1UO-2UWre8kvfCxXlQP9-d2HRQpTc0jt2/view?usp=drive_link">Nissan Laurel C35</a>
-                <a href="https://drive.google.com/file/d/1KteLBKDivSvSZKCwWs2QGRHNWeJlIfdn/view?usp=drive_link">Toyota Supra JZA70</a>
-                <a href="https://drive.google.com/file/d/1AHNjLdX2gvCj5VgC3gIG9xVIFPlxabnZ/view?usp=drive_link">Toyota AE86</a>
-                <a href="https://drive.google.com/file/d/15b8lotGhMHmWZ_xirl2JPS7PcQxF8smx/view?usp=drive_link">Nissan S14</a>
-            </div>
-        </section>
+    <!-- Included Cars Section -->
+    <section id="included-cars">
+        <h2>Included Cars</h2>
+        <div class="car-links">
+            <a href="https://drive.google.com/file/d/17EsM7Z1-MjJ5XWVpMtU8oD2JeYm0X9MO/view?usp=drive_link">BMW M3 E36</a>
+            <a href="https://drive.google.com/file/d/14WH3ShJq6FvVOAyMNcDlgY8_ZSGFVPkY/view?usp=drive_link">BMW M3 E46</a>
+            <a href="https://drive.google.com/file/d/1o7WyJVYIDxZ-hGvve-MHgtSfKA-ppYiJ/view?usp=drive_link">Chevy Corvette C4</a>
+            <a href="https://drive.google.com/file/d/1jSCXkXtOzzYT9tKZPyo1dohsDl2q1X8U/view?usp=drive_link">Chevy Corvette C5</a>
+            <a href="https://drive.google.com/file/d/1Ox-Hta1sFpXeHgBXQp_y8BphI-MI8tIl/view?usp=drive_link">Chevrolet Corvette C6</a>
+            <a href="https://drive.google.com/file/d/1WGjMH1uqKhBRwsW12Ij-MLXLVRaGYts0/view?usp=drive_link">Dodge Challenger Demon</a>
+            <a href="https://drive.google.com/file/d/1ZL3haqfj3bPMocN12LF1N79tinwWT4Ar/view?usp=drive_link">Dodge Charger RT</a>
+            <a href="https://drive.google.com/file/d/1MBCwiwG36BmYtGxksWbMwZ0K0lYj1n8q/view?usp=drive_link">Ford Foxbody Mustang</a>
+            <a href="https://drive.google.com/file/d/1GkMhlOl-brEE_EAVdoRoaMq4lq-hLWzq/view?usp=drive_link">Ford Mustang Saleen</a>
+            <a href="https://drive.google.com/file/d/1fBemQpf4ygVuTtfGRMjQkO0tC7ZpNSmj/view?usp=drive_link">Ford Mustang S197</a>
+            <a href="https://drive.google.com/file/d/1wdmZUxfq2pCVn-L_JugSXju6P3RtwdnO/view?usp=drive_link">Ford Mustang RTR</a>
+            <a href="https://drive.google.com/file/d/1eek2FEzNcMXWVUP5bEdpFrN8LI8fhs4l/view?usp=drive_link">Ford Mustang SN95</a>
+            <a href="https://drive.google.com/file/d/1XipFHo5MLKaOqX2GXSqNNFB6WHLeZXaq/view?usp=drive_link">Lexus IS300</a>
+            <a href="https://drive.google.com/file/d/1q_ZUSnqIFmyud7tVW4sLLsbUryxyD-GX/view?usp=drive_link">Mazda Miata NA8C</a>
+            <a href="https://drive.google.com/file/d/1DkYTGF8hOaYpLRbuuNPaBUoG4KzP9Fps/view?usp=drive_link">Mazda RX-7 FC3S</a>
+            <a href="https://drive.google.com/file/d/1cv7XfQIU0Uzc1m-BekhcMmp7qcopckxt/view?usp=drive_link">Mazda RX-7 FD</a>
+            <a href="https://drive.google.com/file/d/1VWkTXR2ZWf18J_tb4uxagpIkne_CbJ_M/view?usp=drive_link">Mercedes SL65</a>
+            <a href="https://drive.google.com/file/d/18rZ_pOLHVTni3QPvBbdB6wOUeSC1C-5M/view?usp=drive_link">Mitsubishi Lancer Evo6</a>
+            <a href="https://drive.google.com/file/d/1J5Bt5tCGslGfO2oEPicVTgorUbZDU5bB/view?usp=drive_link">Nissan 180SX RPS13</a>
+            <a href="https://drive.google.com/file/d/1oOEpUdXyS8WkiMqkQNO7_QYiXvtWhEUP/view?usp=drive_link">Nissan 240SX</a>
+            <a href="https://drive.google.com/file/d/1qzaP-Rj0whCvOkzwZ_VEhzwwfESpKSAn/view?usp=drive_link">Nissan 350Z</a>
+            <a href="https://drive.google.com/file/d/1UO-2UWre8kvfCxXlQP9-d2HRQpTc0jt2/view?usp=drive_link">Nissan Laurel C35</a>
+            <a href="https://drive.google.com/file/d/1Yd_RmDNRBTBbkNY4kdLxh1D5e-PdB_bK/view?usp=drive_link">Nissan S13</a>
+            <a href="https://drive.google.com/file/d/15b8lotGhMHmWZ_xirl2JPS7PcQxF8smx/view?usp=drive_link">Nissan S14</a>
+            <a href="https://drive.google.com/file/d/1dpBtaV1fbl34LI5_zxuLpCf20CuIAhct/view?usp=drive_link">Nissan S15</a>
+            <a href="https://drive.google.com/file/d/1psS52wfxQv0HPHVJX7lB7iOjZlK5IERr/view?usp=drive_link">Nissan R34</a>
+            <a href="https://drive.google.com/file/d/1Ve41m6KutPlmBpsqUcUPiuTAV-xGWXYu/view?usp=drive_link">Subaru WRX STi</a>
+            <a href="https://drive.google.com/file/d/1AHNjLdX2gvCj5VgC3gIG9xVIFPlxabnZ/view?usp=drive_link">Toyota AE86</a>
+            <a href="https://drive.google.com/file/d/1KteLBKDivSvSZKCwWs2QGRHNWeJlIfdn/view?usp=drive_link">Toyota Supra JZA70</a>
+        </div>
+    </section>
 
-        <!-- Force Feedback Section -->
-        <section id="force-feedback">
-            <h2>Force Feedback Settings</h2>
-            <p>Below are the specific force feedback settings required for optimal use with various wheels:</p>
-            <div class="charts">
-                <h4>Sim Magic</h4>
-                <img src="https://imgur.com/vQzMcYS.png" alt="Sim Magic Settings">
-                <h4>Moza Racing</h4>
-                <img src="https://imgur.com/7otmb1F.png" alt="Moza Racing Settings">
-                <h4>Logitech</h4>
-                <a href="https://cdn.discordapp.com/attachments/1249977904377364550/1249977905447047270/PodsModsG923.lut" class="lut-download">Download Logitech G920+ LUT</a>
-                <img src="https://imgur.com/px4EGoq.png" alt="Logitech Settings 1">
-                <img src="https://imgur.com/TWKIeAp.png" alt="Logitech Settings 2">
-            </div>
-        </section>
+    <!-- Force Feedback Section -->
+    <section id="force-feedback">
+        <h2>Force Feedback Settings</h2>
+        <p>Ensure your wheel is configured correctly for optimal performance:</p>
+        <ul>
+            <li>Sim Magic: <a href="https://imgur.com/vQzMcYS.png" target="_blank">View Settings</a></li>
+            <li>Moza Racing: <a href="https://imgur.com/7otmb1F.png" target="_blank">View Settings</a></li>
+            <li>Logitech: <a href="https://cdn.discordapp.com/attachments/1249977904377364550/1249977905447047270/PodsModsG923.lut?ex=670820e4&is=6706cf64&hm=1873bd5e63ac3b9d4e2c6085c17a2cd974c47592cce18557faa23ab80cde862e&" target="_blank" class="lut-download">Download .LUT</a></li>
+        </ul>
+    </section>
 
-        <!-- Footer -->
-        <footer>
-            <p>&copy; 2024 Pod's Mods. All rights reserved.</p>
-            <a href="https://vosan.co/driftcarpacks/x10ddstreet-grassroots-to-pro-series/">View on Vosan</a> |
-            <a href="https://miinq.app/app/explore?id=364&mod=X10DD.Street+%5BGrassroots+to+Pro+Series%5D">View on Miinq</a>
-        </footer>
-    </div>
 </body>
 </html>
